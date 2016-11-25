@@ -1,0 +1,13 @@
+.site-header {
+    @include grid-column-row();
+    @include spaced-bottom();
+    margin-top: $vspace-small / 2;
+
+    @include breakpoint(medium) {
+        margin-top: $vspace-medium / 2;
+    }
+
+    @include breakpoint(large) {
+        margin-top: $vspace-large / 2;
+    }
+}

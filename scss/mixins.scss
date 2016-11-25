@@ -1,0 +1,85 @@
+////////////////////////////////////////////////////////////////////////////////
+// MARGINS
+////////////////////////////////////////////////////////////////////////////////
+
+@mixin spaced() {
+    margin-top: $vspace-small;
+    margin-bottom: $vspace-small;
+
+    @include breakpoint(medium) {
+        margin-top: $vspace-medium;
+        margin-bottom: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        margin-top: $vspace-large;
+        margin-bottom: $vspace-large;
+    }
+}
+
+@mixin spaced-top() {
+    margin-top: $vspace-small;
+
+    @include breakpoint(medium) {
+        margin-top: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        margin-top: $vspace-large;
+    }
+}
+
+@mixin spaced-bottom() {
+    margin-bottom: $vspace-small;
+
+    @include breakpoint(medium) {
+        margin-bottom: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        margin-bottom: $vspace-large;
+    }
+}
+
+////////////////////////////////////////////////////////////////////////////////
+// PADDINGS
+////////////////////////////////////////////////////////////////////////////////
+
+@mixin padded() {
+    padding-top: $vspace-small;
+    padding-bottom: $vspace-small;
+
+    @include breakpoint(medium) {
+        padding-top: $vspace-medium;
+        padding-bottom: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        padding-top: $vspace-large;
+        padding-bottom: $vspace-large;
+    }
+}
+
+@mixin padded-top() {
+    padding-top: $vspace-small;
+
+    @include breakpoint(medium) {
+        padding-top: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        padding-top: $vspace-large;
+    }
+}
+
+@mixin padded-bottom() {
+    padding-bottom: $vspace-small;
+
+    @include breakpoint(medium) {
+        padding-bottom: $vspace-medium;
+    }
+
+    @include breakpoint(large) {
+        padding-bottom: $vspace-large;
+    }
+}
