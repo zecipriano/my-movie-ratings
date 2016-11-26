@@ -11,3 +11,12 @@
         margin-top: $vspace-large / 2;
     }
 }
+
+.main {
+    @include grid-row();
+    @include spaced();
+
+    &__content {
+        @include grid-column(12);
+    }
+}

@@ -12,7 +12,30 @@
     <body>
         <div class="site-header">
             <h1>My Movie Ratings</h1>
-            <p>[in development]</p>
+            <p><small>[in development]</small></p>
         </div>
+
+        <div class="main">
+            <div id="app" class="main__content">
+
+                <template v-if="ratings">
+                    <ol>
+                        <li v-for="rating in ratings">
+                            {{ rating["Title"] }}
+                        </li>
+                    </ol>
+                </template>
+
+                <div v-else>
+                    <p>Upload your IMDb ratings file.</p>
+                    <input type="file" v-on:change="onFileChange">
+                </div>
+
+            </div>
+        </div>
+
+        <script src="js/papaparse.min.js"></script>
+        <script src="js/vue.js"></script>
+        <script src="js/app.js"></script>
     </body>
 </html>
