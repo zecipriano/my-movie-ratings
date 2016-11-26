@@ -7,7 +7,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <link href="css/app.css" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Cantarell|Fjalla+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Cantarell:400,700|Fjalla+One" rel="stylesheet">
+        <script src="https://use.fontawesome.com/68f75989fc.js"></script>
     </head>
     <body>
         <div class="site-header">
@@ -19,11 +20,17 @@
             <div id="app" class="main__content">
 
                 <template v-if="ratings">
-                    <ol>
-                        <li v-for="rating in ratings">
-                            {{ rating["Title"] }}
-                        </li>
-                    </ol>
+                    <div class="movie-list">
+                        <div v-for="rating in ratings" class="movie-list__movie">
+                            <div class="movie-list__movie-info">
+                                <p><strong>{{ rating["Title"] }}</strong></p>
+                                <p>
+                                    <span class="movie-list__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ rating["You rated"] }}</span>
+                                    <span class="movie-list__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ rating["IMDb Rating"] }}</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </template>
 
                 <div v-else>
