@@ -38,7 +38,7 @@ var app = new Vue({
                         paramsSerializer: { arrayIndex : i }
                     }
 
-                    axios.get('http://www.omdbapi.com/?i=' + imdbID, config)
+                    axios.get('https://www.omdbapi.com/?i=' + imdbID, config)
                         .then(function (response) {
                             Vue.set(this.posters, response.data['imdbID'], response.data['Poster']);
                         }.bind(this))
