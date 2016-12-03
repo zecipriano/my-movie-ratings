@@ -21,8 +21,8 @@
 
                 <template v-if="ratings">
                     <div class="movie-list">
-                        <template v-for="(bestMoviesOfTheYear, year) in bestPerYear">
-                            <div v-for="(movie, index) in bestMoviesOfTheYear.movies" class="movie-list__movie">
+                        <template v-for="year in Object.keys(bestPerYear).sort().reverse()">
+                            <div v-for="(movie, index) in bestPerYear[year].movies" class="movie-list__movie">
                                 <div class="movie-list__movie-info">
                                     <h4 v-if="index == 0">{{ year }}</h4>
                                     <h4 v-else>&nbsp;</h4>
