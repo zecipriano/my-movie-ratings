@@ -21,15 +21,19 @@
 
                 <template v-if="ratings">
                     <div class="movie-list">
-                        <div v-for="rating in ratings" class="movie-list__movie">
-                            <div class="movie-list__movie-info">
-                                <p><strong>{{ rating["Title"] }}</strong></p>
-                                <p>
-                                    <span class="movie-list__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ rating["You rated"] }}</span>
-                                    <span class="movie-list__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ rating["IMDb Rating"] }}</span>
-                                </p>
+                        <template v-for="(bestMoviesOfTheYear, year) in bestPerYear">
+                            <div v-for="movie in bestMoviesOfTheYear.movies" class="movie-list__movie">
+                                <div class="movie-list__movie-info">
+                                    <h3>{{ year }}</h3>
+                                    <img :src="posters[movie['const']]">
+                                    <p><strong>{{ movie["Title"] }}</strong></p>
+                                    <p>
+                                        <span class="movie-list__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
+                                        <span class="movie-list__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
+                                    </p>
+                                </div>
                             </div>
-                        </div>
+                        </template>
                     </div>
                 </template>
 
