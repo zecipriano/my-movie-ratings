@@ -16,32 +16,23 @@
             <p><small>[in development]</small></p>
         </div>
 
-        <div class="main">
-            <div id="app" class="main__content">
-
-                <template v-if="ratings">
-                    <div class="movie-list">
-                        <template v-for="year in Object.keys(bestPerYear).sort().reverse()">
-                            <div v-for="(movie, index) in bestPerYear[year].movies" class="movie-list__movie">
-                                <div class="movie-list__movie-info">
-                                    <h4 v-if="index == 0">{{ year }}</h4>
-                                    <h4 v-else>&nbsp;</h4>
-                                    <p><strong>{{ movie["Title"] }}</strong></p>
-                                    <p>
-                                        <span class="movie-list__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
-                                        <span class="movie-list__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
-                                    </p>
-                                </div>
-                            </div>
-                        </template>
+        <div id="app" class="main">
+            <div class="ratings-list" v-if="ratings">
+                <div class="year" v-for="year in Object.keys(bestPerYear).sort().reverse()">
+                    <h2 class="year__title">{{ year }}</h2>
+                    <div class="movie" v-for="(movie, index) in bestPerYear[year].movies">
+                        <h3 class="movie__title">{{ movie["Title"] }}</h3>
+                        <p class="movie__ratings">
+                            <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
+                            <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
+                        </p>
                     </div>
-                </template>
-
-                <div v-else>
-                    <p>Upload your IMDb ratings file.</p>
-                    <input type="file" v-on:change="onFileChange">
                 </div>
+            </div>
 
+            <div v-else>
+                <p>Upload your IMDb ratings file.</p>
+                <input type="file" v-on:change="onFileChange">
             </div>
         </div>
 

@@ -39,18 +39,18 @@
 //  34. Title Bar
 //  35. Tooltip
 //  36. Top Bar
-
 @import 'util/util';
 
 // 1. Global
 // ---------
 
+$global-width: rem-calc(1200);
 $foundation-palette: (
-  primary: #2199e8,
-  secondary: #777,
-  success: #3adb76,
-  warning: #ffae00,
-  alert: #ec5840,
+        primary: #e6b91e,
+        secondary: #999,
+        success: #3adb76,
+        warning: #ffae00,
+        alert: #ec5840,
 );
 $body-font-family: 'Cantarell', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
 
@@ -60,3 +60,8 @@ $body-font-family: 'Cantarell', 'Helvetica Neue', Helvetica, Roboto, Arial, sans
 // ------------------
 
 $header-font-family: join('Fjalla One', $body-font-family);
+
+// 56. Xy Grid
+// -----------
+
+$grid-container-max: $global-width + rem-calc(30);
