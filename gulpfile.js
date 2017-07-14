@@ -2,8 +2,8 @@ var gulp = require('gulp');
 var plugins = require('gulp-load-plugins')();
 
 var scssPath = [
-    'node_modules/foundation-sites/scss',
-]
+    'node_modules/foundation-sites/scss'
+];
 
 gulp.task('scss', function() {
     return gulp.src('scss/app.scss')
@@ -22,4 +22,4 @@ gulp.task('default', ['scss']);
 
 gulp.task('watch', ['scss'], function() {
     gulp.watch(['scss/**/*.scss'], ['scss']);
-})
+});
