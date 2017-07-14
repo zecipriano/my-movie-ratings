@@ -21,7 +21,9 @@ var app = new Vue({
                 dynamicTyping: true,
                 skipEmptyLines: true,
                 complete: function (results) {
-                    this.ratings = results.data;
+                    this.ratings = results.data.filter(function (el) {
+                        return el["Title type"] === "Feature Film"
+                    });
                 }.bind(this)
             });
         },
@@ -52,5 +54,4 @@ var app = new Vue({
             }
         }
     }
-
-})
+});
