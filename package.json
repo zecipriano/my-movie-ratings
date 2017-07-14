@@ -1,15 +1,15 @@
 {
-  "name": "my-movie-ratings",
-  "version": "1.0.0",
-  "main": "index.js",
-  "author": "Zé Cipriano <ze@zecipriano.com>",
-  "license": "MIT",
-  "dependencies": {},
-  "devDependencies": {
-    "foundation-sites": "^6.2.4",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-load-plugins": "^1.4.0",
-    "gulp-sass": "^2.3.2"
-  }
+    "name": "my-movie-ratings",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Zé Cipriano <ze@zecipriano.com>",
+    "license": "MIT",
+    "dependencies": {},
+    "devDependencies": {
+        "foundation-sites": "^6.2.4",
+        "gulp": "^3.9.1",
+        "gulp-autoprefixer": "^3.1.1",
+        "gulp-load-plugins": "^1.4.0",
+        "gulp-sass": "^2.3.2"
+    }
 }
