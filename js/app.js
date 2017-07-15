@@ -33,22 +33,24 @@ var app = new Vue({
 
             for (var i = 0; i < arrayLength; i++) {
                 var movie = this.ratings[i];
+                var year = movie["Year"];
+                var rating = movie["You rated"];
 
-                if (!this.bestPerYear[movie["Year"]]) {
+                if (!this.bestPerYear[year]) {
 
-                    Vue.set(this.bestPerYear, movie["Year"], {
-                        bestRating: movie["You rated"],
+                    Vue.set(this.bestPerYear, year, {
+                        bestRating: rating,
                         movies: [movie]
                     });
 
-                } else if (this.bestPerYear[movie["Year"]].bestRating < movie["You rated"]) {
+                } else if (this.bestPerYear[year].bestRating < rating) {
 
-                    Vue.set(this.bestPerYear[movie["Year"]], "bestRating", movie["You rated"]);
-                    Vue.set(this.bestPerYear[movie["Year"]], "movies", [movie]);
+                    this.bestPerYear[year].bestRating = rating;
+                    this.bestPerYear[year].movies = [movie];
 
-                } else if (this.bestPerYear[movie["Year"]].bestRating === movie["You rated"]) {
+                } else if (this.bestPerYear[year].bestRating === rating) {
 
-                    this.bestPerYear[movie["Year"]].movies.push(movie);
+                    this.bestPerYear[year].movies.push(movie);
 
                 }
             }
