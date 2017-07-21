@@ -14,7 +14,8 @@ const app = new Vue({
     router: new VueRouter({
         routes: [
             {path: '/best-per-year', component: bestPerYear},
-            {path: '/best-movies', component: bestMovies}
+            {path: '/best-movies', component: bestMovies},
+            {path: '/worst-movies', component: worstMovies}
         ],
     }),
 
