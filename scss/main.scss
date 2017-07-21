@@ -55,6 +55,21 @@ html {
     }
 }
 
+.movies-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+
+    @include breakpoint(large) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .year {
     text-align: center;
 
@@ -70,6 +85,7 @@ html {
 }
 
 .movie {
+    text-align: center;
     padding: 0.25rem;
     margin-bottom: 2rem;
 
