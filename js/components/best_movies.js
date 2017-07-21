@@ -13,6 +13,7 @@ const bestMovies = {
                         {{ movie["Title"] }}
                     </a>
                 </h3>
+                <p class="movie__year">{{ movie["Year"] }}</p>
                 <p class="movie__ratings">
                     <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
                     <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
@@ -22,7 +23,7 @@ const bestMovies = {
     `,
 
     computed: {
-        bestMovies: function() {
+        bestMovies: function () {
             let arrayLength = this.sharedState.ratings.length;
             let bestRating = 0;
             let bestMovies = [];
@@ -39,7 +40,11 @@ const bestMovies = {
                 }
             }
 
-            return bestMovies.reverse();
+            return bestMovies.sort(
+                function (a, b) {
+                    return (a["Year"] > b["Year"]) ? 1 : ((b["Year"] > a["Year"]) ? -1 : 0);
+                }
+            ).reverse();
         }
     }
 };
