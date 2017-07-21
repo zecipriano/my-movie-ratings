@@ -16,7 +16,9 @@ const app = new Vue({
             {path: '/best-per-year', component: bestPerYear},
             {path: '/best-movies', component: bestMovies},
             {path: '/worst-movies', component: worstMovies},
-            {path: '/year/:year', name: 'year', component: yearMovies}
+            {path: '/year/:year', name: 'year', component: yearMovies},
+            {path: '/overrated-movies', component: overratedMovies},
+            {path: '/underrated-movies', component: underratedMovies}
         ],
     }),
 
