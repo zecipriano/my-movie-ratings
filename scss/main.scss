@@ -13,6 +13,33 @@ html {
     }
 }
 
+.navigation {
+    margin-bottom: 2rem;
+
+    &__link {
+        @include button;
+        color: $black;
+
+        &:focus {
+            border-color: $primary-color;
+            color: $black;
+            outline: none;
+        }
+
+        &:hover {
+            background-color: $primary-color;
+            color: $black;
+            border-color: $primary-color;
+        }
+    }
+
+    .router-link-active {
+        background-color: $primary-color;
+        color: $black;
+        border-color: $primary-color;
+    }
+}
+
 .ratings-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -52,7 +79,7 @@ html {
         a {
             color: $black;
             border-bottom: 2px solid transparent;
-            transition: border-bottom 0.25s ease-in-out;
+            transition: border-bottom 0.25s ease-out;
         }
 
         a:hover {
