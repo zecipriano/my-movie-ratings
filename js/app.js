@@ -15,7 +15,8 @@ const app = new Vue({
         routes: [
             {path: '/best-per-year', component: bestPerYear},
             {path: '/best-movies', component: bestMovies},
-            {path: '/worst-movies', component: worstMovies}
+            {path: '/worst-movies', component: worstMovies},
+            {path: '/year/:year', name: 'year', component: yearMovies}
         ],
     }),
 

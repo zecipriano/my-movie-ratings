@@ -8,7 +8,7 @@ const bestPerYear = {
     template: `
         <div class="ratings-list">
             <div class="year" v-for="year in Object.keys(bestPerYear).sort().reverse()">
-                <h2 class="year__title">{{ year }}</h2>
+                <h2 class="year__title"><router-link :to="{ name: 'year', params: { year: year }}">{{ year }}</router-link></h2>
                 <div class="movie" v-for="(movie, index) in bestPerYear[year].movies">
                     <h3 class="movie__title">
                         <a :href='movie["URL"]' target="_blank">

@@ -40,6 +40,14 @@ html {
     }
 }
 
+.page-title {
+    font-size: 2rem;
+    background-color: $primary-color;
+    text-align: center;
+    padding: 0.5rem 0.25rem;
+    margin-bottom: 2rem;
+}
+
 .ratings-list {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -80,6 +88,14 @@ html {
 
         @include breakpoint(medium) {
             font-size: 1.25rem;
+        }
+
+        a {
+            color: black;
+        }
+
+        a:hover {
+            color: darken($primary-color, 20%);
         }
     }
 }
