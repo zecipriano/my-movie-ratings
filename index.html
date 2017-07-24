@@ -20,7 +20,6 @@
     <body>
         <div class="site-header">
             <h1>My Movie Ratings</h1>
-            <p><small>[in development]</small></p>
         </div>
 
         <div id="app" class="main">
@@ -40,8 +39,12 @@
             </div>
 
             <div v-else>
-                <p>Upload your IMDb ratings file.</p>
-                <input type="file" v-on:change="onFileChange">
+                <div class="upload-file-input">
+                    <p>Upload your IMDb ratings file (.csv).</p>
+                    <input type="file" v-on:change="onFileChange">
+                </div>
+
+                <p><small>You can download the file from the 'Your Ratings' screen on <a href="http://www.imdb.com/">IMDb</a>. On the bottom of the page there is a link to 'Export this list'.</small></p>
             </div>
         </div>
 

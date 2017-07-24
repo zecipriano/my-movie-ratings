@@ -6,16 +6,22 @@ const directors = {
     },
 
     template: `
-        <div class="directors-list">
-            <div class="director" v-for="director in directors">
-                <h3 class="director__name">{{ director.name }}</h3>
-                <p>Average rating of {{ director.avgRating }} in {{ director.movies.length }} movies.</p>
-                
-                <ul class="director__movies">
-                    <li v-for="movie in director.movies">
-                        <a :href='movie["URL"]' target="_blank">{{ movie["Title"] }}</a> <small>({{ movie["You rated"] }})</small>
-                     </li>
-                </ul>
+        <div>
+            <div class="page-header">
+                <h2 class="page-header__title">Directors</h2>
+                <p class="page-header__description">Directors in order of average rating (only directors with more than one movie rated).</p>
+            </div>
+            <div class="directors-list">
+                <div class="director" v-for="director in directors">
+                    <h3 class="director__name">{{ director.name }}</h3>
+                    <p>Average rating of {{ director.avgRating }} in {{ director.movies.length }} movies.</p>
+                    
+                    <ul class="director__movies">
+                        <li v-for="movie in director.movies">
+                            <a :href='movie["URL"]' target="_blank">{{ movie["Title"] }}</a> <small>({{ movie["You rated"] }})</small>
+                         </li>
+                    </ul>
+                </div>
             </div>
         </div>
     `,

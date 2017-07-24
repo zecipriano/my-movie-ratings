@@ -6,19 +6,25 @@ const worstMovies = {
     },
 
     template: `
-        <div class="movies-list">
-            <div class="movie" v-for="(movie, index) in worstMovies">
-                <h3 class="movie__title">
-                    <a :href='movie["URL"]' target="_blank">
-                        {{ movie["Title"] }}
-                    </a>
-                </h3>
-                <p class="movie__year">{{ movie["Year"] }}</p>
-                <p class="movie__ratings">
-                    <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
-                    <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
-                </p>
-            </div>        
+        <div>
+            <div class="page-header">
+                <h2 class="page-header__title">Worst Movies</h2>
+                <p class="page-header__description">Worst movies EVER!</p>
+            </div>
+            <div class="movies-list">
+                <div class="movie" v-for="(movie, index) in worstMovies">
+                    <h3 class="movie__title">
+                        <a :href='movie["URL"]' target="_blank">
+                            {{ movie["Title"] }}
+                        </a>
+                    </h3>
+                    <p class="movie__year">{{ movie["Year"] }}</p>
+                    <p class="movie__ratings">
+                        <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
+                        <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
+                    </p>
+                </div>        
+            </div>
         </div>
     `,
 
