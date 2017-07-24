@@ -7,7 +7,7 @@ const bestMovies = {
 
     template: `
         <div class="movies-list">
-            <div class="movie" v-for="(movie, index) in bestMovies">
+            <div class="movie" v-for="movie in bestMovies">
                 <h3 class="movie__title">
                     <a :href='movie["URL"]' target="_blank">
                         {{ movie["Title"] }}

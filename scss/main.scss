@@ -78,6 +78,51 @@ html {
     }
 }
 
+.directors-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+
+    @include breakpoint(medium) {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+
+    @include breakpoint(large) {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.director {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    &__name {
+        font-size: 1.25rem;
+
+        @include breakpoint(medium) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &__movies {
+        list-style: none;
+
+        li {
+            margin-bottom: 0.5rem;
+            display: inline;
+
+            &::after {
+                content: ', ';
+            }
+        }
+
+        li:last-child::after {
+            content: '';
+        }
+    }
+}
+
 .year {
     text-align: center;
 
