@@ -8,20 +8,22 @@ let store = {
     },
 };
 
+const router = new VueRouter({
+    routes: [
+        {path: '/best-per-year', component: bestPerYear},
+        {path: '/best-movies', component: bestMovies},
+        {path: '/worst-movies', component: worstMovies},
+        {path: '/year/:year', name: 'year', component: yearMovies},
+        {path: '/overrated-movies', component: overratedMovies},
+        {path: '/underrated-movies', component: underratedMovies},
+        {path: '/directors', component: directors}
+    ],
+});
+
 const app = new Vue({
     el: '#app',
 
-    router: new VueRouter({
-        routes: [
-            {path: '/best-per-year', component: bestPerYear},
-            {path: '/best-movies', component: bestMovies},
-            {path: '/worst-movies', component: worstMovies},
-            {path: '/year/:year', name: 'year', component: yearMovies},
-            {path: '/overrated-movies', component: overratedMovies},
-            {path: '/underrated-movies', component: underratedMovies},
-            {path: '/directors', component: directors}
-        ],
-    }),
+    router: router,
 
     data: {
         sharedState: store.state,
@@ -41,6 +43,8 @@ const app = new Vue({
                     }));
                 }.bind(this)
             });
+
+            router.push({ path: '/best-movies' });
         }
     }
 });
