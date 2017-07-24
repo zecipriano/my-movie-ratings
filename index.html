@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html prefix="og: http://ogp.me/ns#">
     <head>
         <meta charset="utf-8">
         <title>My Movie Ratings</title>
@@ -9,11 +9,17 @@
         <link href="css/app.css" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Cantarell:400,700|Fjalla+One" rel="stylesheet">
         <script src="https://use.fontawesome.com/68f75989fc.js"></script>
+
+        <meta property="og:title" content="My Movie Ratings" />
+        <meta property="og:url" content="https://zecipriano.github.io/my-movie-ratings/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:image" content="https://zecipriano.github.io/my-movie-ratings/img/og_image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
     </head>
     <body>
         <div class="site-header">
             <h1>My Movie Ratings</h1>
-            <p><small>[in development]</small></p>
         </div>
 
         <div id="app" class="main">
@@ -33,9 +39,21 @@
             </div>
 
             <div v-else>
-                <p>Upload your IMDb ratings file.</p>
-                <input type="file" v-on:change="onFileChange">
+                <div class="upload-file-input">
+                    <p>Upload your IMDb ratings file (.csv).</p>
+                    <input type="file" v-on:change="onFileChange">
+                </div>
+
+                <p><small>You can download the file from the 'Your Ratings' screen on <a href="http://www.imdb.com/">IMDb</a>. On the bottom of the page there is a link to 'Export this list'.</small></p>
             </div>
+
+            <footer>
+                <p><small><a href="https://github.com/zecipriano/my-movie-ratings" target="_blank">See on GitHub</a></small></p>
+                <p><a href="http://zecipriano.com" target="_blank">
+                    <img class="author-logo" src="img/zecipriano.svg" title="Developed by Zé Cipriano" alt="Zé Cipriano">
+                </a></p>
+
+            </footer>
         </div>
 
         <script src="js/papaparse.min.js"></script>

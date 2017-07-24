@@ -8,7 +8,11 @@ const yearMovies = {
 
     template: `
         <div>
-            <h2 class="page-title">{{ year }}</h2>
+            <div class="page-header">
+                <h2 class="page-header__title">{{ year }} Movies</h2>
+                <p class="page-header__description">All the movies from {{ year}} that you rated, in order of preference.</p>
+            </div>
+            
             <div class="movies-list">
                 <div class="movie" v-for="(movie, index) in yearMovies">
                     <h3 class="movie__title">
