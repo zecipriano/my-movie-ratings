@@ -190,3 +190,13 @@ html {
         padding: 0 0.5rem;
     }
 }
+
+footer {
+    text-align: center;
+    @include spaced();
+
+    .author-logo {
+        max-width: 1.5rem;
+    }
+}
+
