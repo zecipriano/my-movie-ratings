@@ -4,7 +4,20 @@ let store = {
     },
 
     setRatings(newRatings) {
-        this.state.ratings = newRatings
+        this.state.ratings = newRatings.filter(function (el) {
+            return el['Title Type'] === 'movie';
+        }).map(function (el) {
+            var normalized = {};
+
+            normalized.directors = el['Directors'];
+            normalized.imdbRating = el['IMDb Rating'];
+            normalized.year = el['Year'];
+            normalized.title = el['Title'];
+            normalized.url = el['URL'];
+            normalized.userRating = el['Your Rating'];
+
+            return normalized;
+        });
     },
 };
 
@@ -38,10 +51,8 @@ const app = new Vue({
                 dynamicTyping: true,
                 skipEmptyLines: true,
                 complete: function (results) {
-                    store.setRatings(results.data.filter(function (el) {
-                        return el["Title type"] === "Feature Film"
-                    }));
-                }.bind(this)
+                    store.setRatings(results.data);    
+                }
             });
 
             router.push({ path: '/best-movies' });

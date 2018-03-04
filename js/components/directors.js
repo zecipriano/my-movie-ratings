@@ -18,7 +18,7 @@ const directors = {
                     
                     <ul class="director__movies">
                         <li v-for="movie in director.movies">
-                            <a :href='movie["URL"]' target="_blank">{{ movie["Title"] }}</a> <small>({{ movie["You rated"] }})</small>
+                            <a :href='movie.url' target="_blank">{{ movie.title }}</a> <small>({{ movie.userRating }})</small>
                          </li>
                     </ul>
                 </div>
@@ -33,8 +33,8 @@ const directors = {
 
             for (let i = 0; i < arrayLength; i++) {
                 let currentMovie = this.sharedState.ratings[i];
-                let currentDirectors = currentMovie["Directors"];
-                let currentMovieRating = currentMovie["You rated"];
+                let currentDirectors = currentMovie.directors;
+                let currentMovieRating = currentMovie.userRating;
 
                 if(currentDirectors && !directors[currentDirectors]) {
                     directors[currentDirectors] = {
@@ -50,7 +50,7 @@ const directors = {
             return Object.keys(directors).map(function (key) {
                 directors[key].name = key;
                 directors[key].movies.sort(function (a, b) {
-                    return (a["You rated"] > b["You rated"] ? 1 : (b["You rated"] > a["You rated"] ? -1 : 0));
+                    return (a.userRating > b.userRating ? 1 : (b.userRating > a.userRating ? -1 : 0));
                 }).reverse();
                 return directors[key];
             }).filter(function (el) {
@@ -66,7 +66,7 @@ const directors = {
             let sum = 0;
 
             for (let i = 0; i < movies.length; i++) {
-                sum += movies[i]["You rated"];
+                sum += movies[i].userRating;
             }
 
             return Math.round((sum / movies.length) * 10) / 10;

@@ -15,14 +15,14 @@ const bestMovies = {
             <div class="movies-list">
                 <div class="movie" v-for="movie in bestMovies">
                     <h3 class="movie__title">
-                        <a :href='movie["URL"]' target="_blank">
-                            {{ movie["Title"] }}
+                        <a :href='movie.url' target="_blank">
+                            {{ movie.title }}
                         </a>
                     </h3>
-                    <p class="movie__year">{{ movie["Year"] }}</p>
+                    <p class="movie__year">{{ movie.year }}</p>
                     <p class="movie__ratings">
-                        <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie["You rated"] }}</span>
-                        <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie["IMDb Rating"] }}</span>
+                        <span class="movie__user-rating"><i class="fa fa-user" aria-hidden="true"></i> {{ movie.userRating }}</span>
+                        <span class="movie__all-users-rating"><i class="fa fa-users" aria-hidden="true"></i> {{ movie.imdbRating }}</span>
                     </p>
                 </div>        
             </div>
@@ -37,7 +37,7 @@ const bestMovies = {
 
             for (let i = 0; i < arrayLength; i++) {
                 let movie = this.sharedState.ratings[i];
-                let rating = movie["You rated"];
+                let rating = movie.userRating;
 
                 if (rating > bestRating) {
                     bestMovies = [movie];
@@ -49,7 +49,7 @@ const bestMovies = {
 
             return bestMovies.sort(
                 function (a, b) {
-                    return (a["Year"] > b["Year"]) ? 1 : ((b["Year"] > a["Year"]) ? -1 : 0);
+                    return (a.year > b.year) ? 1 : ((b.year > a.year) ? -1 : 0);
                 }
             ).reverse();
         }
