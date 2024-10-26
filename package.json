@@ -4,12 +4,11 @@
     "main": "index.js",
     "author": "Zé Cipriano <ze@zecipriano.com>",
     "license": "MIT",
-    "dependencies": {},
     "devDependencies": {
         "autoprefixer": "^10.4.6",
         "foundation-sites": "^6.4.0",
+        "gulp": "^4.0.2",
         "gulp-dart-sass": "^1.1.0",
-        "gulp-postcss": "^9.0.1",
-        "gulp": "^4.0.2"
+        "gulp-postcss": "^9.0.1"
     }
 }
